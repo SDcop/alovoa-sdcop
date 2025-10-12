@@ -1,4 +1,4 @@
-export const DOMAIN : string = "http://124.220.79.230:8080"
+export const DOMAIN : string = "https://www.longlongpark.icu:8080"
 //export const DOMAIN : string = "https://beta.alovoa.com"
 //export const DOMAIN : string = "https://alovoa.com"
 
