@@ -11,7 +11,7 @@ import * as URL from "../../URL";
 import SelectModal from "../../components/SelectModal";
 import VerticalView from "../../components/VerticalView";
 import ColorModal from "../../components/ColorModal";
-import { MaterialBottomTabScreenProps } from "react-native-paper";
+import {Button, MaterialBottomTabScreenProps, Text} from "react-native-paper";
 
 
 const i18n = I18N.getI18n();
@@ -52,6 +52,12 @@ const Settings = ({ route }: Props) => {
     setUnits(num);
     await Global.Fetch(Global.format(URL.USER_UPDATE_UNITS, String(num)), 'post');
     await Global.SetStorage(Global.STORAGE_SETTINGS_UNIT, String(num));
+  }
+
+  async function logout() {
+    Global.Fetch(URL.AUTH_LOGOUT);
+    Global.SetStorage(Global.STORAGE_PAGE, Global.INDEX_LOGIN);
+    Global.navigate("Login");
   }
 
   async function updateEmailSettings(id: number, checked: boolean) {
@@ -100,6 +106,11 @@ const Settings = ({ route }: Props) => {
           </View>
         </View>
       </VerticalView>
+      <View style={{width:300,alignSelf:'center',position:'absolute',bottom:200}}>
+        <Button mode='contained' onPress={() => logout()}>
+          <Text style={{fontSize:20,fontWeight:"bold"}}>{i18n.t('profile.logout')}</Text>
+        </Button>
+      </View>
     </View>
   );
 };

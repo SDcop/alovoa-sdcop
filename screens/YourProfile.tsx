@@ -81,13 +81,8 @@ const YourProfile = ({ route, navigation }: Props) => {
   async function copyReferralCodeToClipboard() {
     await Clipboard.setStringAsync(uuid);
     Global.ShowToast(i18n.t('referral.copy'));
-  };
-
-  async function logout() {
-    Global.Fetch(URL.AUTH_LOGOUT);
-    Global.SetStorage(Global.STORAGE_PAGE, Global.INDEX_LOGIN);
-    Global.navigate("Login");
   }
+
 
   async function downloadUserData() {
     if (Platform.OS === 'android') {
@@ -141,12 +136,7 @@ const YourProfile = ({ route, navigation }: Props) => {
         </Pressable>
 
         <View style={[styles.containerProfileItem, { marginTop: 12, minHeight: height }]}>
-          <Text style={[styles.name]}>{name + ", " + age}</Text>
-          <View style={{ marginBottom: 48, marginTop: 12 }}>
-            <Card mode="contained" style={{ padding: 12 }}>
-              <Text style={{ textAlign: 'center' }}>{i18n.t('profile.donated') + ": " + String(user ? user.totalDonations : 0) + ' €'}</Text>
-            </Card>
-          </View>
+          <Text style={[styles.name,{marginBottom:20}]}>{name}</Text>
 
           <Button icon="chevron-right" mode="elevated" contentStyle={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}
             style={{ alignSelf: 'stretch', marginBottom: 8 }} onPress={() => Global.navigate(Global.SCREEN_PROFILE_PICTURES, false, { user: user })}>{i18n.t('profile.screen.pictures')}</Button>
@@ -171,34 +161,6 @@ const YourProfile = ({ route, navigation }: Props) => {
             />
           </View>
           }
-        </View>
-        <View style={[styles.containerProfileItem, { marginTop: 32, marginBottom: 48 }]}>
-          <View style={{ marginTop: 128, paddingBottom: STATUS_BAR_HEIGHT + 24 }}>
-            <Button mode='contained' onPress={() => logout()}>
-              <Text>{i18n.t('profile.logout')}</Text>
-            </Button>
-            <View style={{ marginTop: 24 }}>
-              <Text style={[styles.link, { padding: 8 }]} onPress={() => {
-                WebBrowser.openBrowserAsync(URL.PRIVACY);
-              }}>{i18n.t('privacy-policy')}</Text>
-              <Text style={[styles.link, { padding: 8 }]} onPress={() => {
-                WebBrowser.openBrowserAsync(URL.TOS);
-              }}>{i18n.t('tos')}</Text>
-              <Text style={[styles.link, { padding: 8 }]} onPress={() => {
-                WebBrowser.openBrowserAsync(URL.IMPRINT);
-              }}>{i18n.t('imprint')}</Text>
-              <Text style={[styles.link, { padding: 8 }]} onPress={() => {
-                Global.navigate(Global.SCREEN_PROFILE_ADVANCED_SETTINGS, false, { user: user })
-              }}>{i18n.t('profile.screen.advanced-settings')}</Text>
-              <Text style={[styles.link, { padding: 8 }]} onPress={() => {
-                downloadUserData();
-              }}>{i18n.t('profile.download-userdata')}</Text>
-              <Text style={[styles.link, { padding: 8, opacity: requestingDeletion ? 0.3 : 1 }]} onPress={() => {
-                deleteAccount();
-              }}>{i18n.t('profile.delete-account')}</Text>
-            </View>
-          </View>
-
         </View>
       </VerticalView>
       <Alert visible={alertVisible} setVisible={setAlertVisible} message={i18n.t('referral.hint')} buttons={alertButtons} />

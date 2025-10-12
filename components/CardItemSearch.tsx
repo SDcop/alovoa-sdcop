@@ -63,7 +63,7 @@ const CardItem = ({
 
   const nameStyle: StyleProp<TextStyle> = [
     {
-      fontSize: 20,
+      fontSize: 30,
       textAlign: 'auto',
       textAlignVertical: 'center'
     },
@@ -95,7 +95,7 @@ const CardItem = ({
   }
 
   return (
-    <View style={[styles.containerCardItem, { paddingHorizontal: 20, backgroundColor: colors.surface, maxWidth: WIDESCREEN_HORIZONTAL_MAX, height: height - NAVIGATION_BAR_HEIGHT - STATUS_BAR_HEIGHT - cardPadding, width: width - cardPadding }]}>
+    <View style={[styles.containerCardItem, { paddingHorizontal: 20, backgroundColor: colors.surface, maxWidth: WIDESCREEN_HORIZONTAL_MAX, height: 200, width: width - cardPadding }]}>
       { tooManyReports &&
         <View style={{flexGrow: 1, height: '100%', alignItems: 'center', justifyContent: 'center'}}>
           <View style={{gap: 24}}>
@@ -135,7 +135,7 @@ const CardItem = ({
                 <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                   {
                     user.commonInterests?.map((item, index) => (
-                      <Chip key={index} style={[styles.marginRight4, styles.marginBottom4]}><Text>{item.text}</Text></Chip>
+                      <Chip key={index} style={[styles.marginRight4, styles.marginBottom4]}><Text style={{fontSize:25}}>{item.text}</Text></Chip>
                     ))
                   }
                 </View>

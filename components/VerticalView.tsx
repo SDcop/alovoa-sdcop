@@ -8,7 +8,7 @@ const VerticalView = React.forwardRef<ScrollView, Props>(({ children, style, onR
     const { colors } = useTheme();
     const [refreshing] = React.useState(false); // todo: setRefreshing
     return (
-            <ScrollView style={[{ display: 'flex', flex: 1, backgroundColor: colors.background}]} 
+            <ScrollView style={[{ display: 'flex', backgroundColor: colors.background}]}
                 contentContainerStyle={[{alignSelf: 'center', width: '100%', maxWidth: WIDESCREEN_HORIZONTAL_MAX, padding: 12}, style]} keyboardShouldPersistTaps='always' 
                 ref={ref} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>{children}</ScrollView>
     );

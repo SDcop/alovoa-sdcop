@@ -10,7 +10,7 @@ import * as I18N from "../i18n";
 import { Captcha, RootStackParamList } from "../types";
 import VerticalView from "../components/VerticalView";
 import { STATUS_BAR_HEIGHT } from "../assets/styles";
-import splash from '../assets/splash.png';
+import tw from '../assets/tw.jpg';
 
 const i18n = I18N.getI18n()
 const APP_URL = Linking.createURL("");
@@ -37,6 +37,8 @@ const Login = ({route: _r, navigation: _n}: Props) => {
   const hideDialog = () => setVisible(false);
   const { height } = useWindowDimensions();
 
+
+
   React.useEffect(() => {
     load();
   }, []);
@@ -62,6 +64,7 @@ const Login = ({route: _r, navigation: _n}: Props) => {
   };
 
   const load = async () => {
+    console.log("Loading...");
     await Global.GetStorage(Global.STORAGE_PAGE).then((value) => {
       if (value && value !== Global.INDEX_REGISTER) {
         Global.loadPage(value);
@@ -136,6 +139,7 @@ const Login = ({route: _r, navigation: _n}: Props) => {
   }
 
   const style = StyleSheet.create({
+
     link: {
       color: colors.primary,
       flex: 1,
@@ -170,10 +174,10 @@ const Login = ({route: _r, navigation: _n}: Props) => {
     <VerticalView style={{ paddingTop: STATUS_BAR_HEIGHT }}>
       {!loading &&
         <View >
-          <View style={{ minHeight: height }}>
-            <Image resizeMode='contain' style={{ height: 200, width: '100%', marginTop: 24 }} source={splash} />
+          <View style={{ minHeight: height}}>
+            <Image resizeMode='contain' style={{ height: 200, width: '100%', marginTop: 24 }} source={tw} />
 
-            <Text style={{ textAlign: 'center', marginBottom: 48, marginTop: 24, fontSize: 32, fontWeight: '500' }}>Alovoa</Text>
+            <Text style={{ textAlign: 'center', marginBottom: 48, marginTop: 20, fontSize: 55, fontWeight: '900' }}>Twitter</Text>
 
             <TextInput
               style={{ backgroundColor: colors.background }}

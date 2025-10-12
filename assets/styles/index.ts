@@ -18,6 +18,9 @@ export const NAVIGATION_BAR_HEIGHT = 80;
 export const WIDESCREEN_HORIZONTAL_MAX = 600;
 
 export default StyleSheet.create({
+  backColor:{
+    backgroundColor:'#d34a71'
+  },
   textInputAlign: {
     textAlign: I18nManager.isRTL ? "right" : "left",
   },
@@ -188,8 +191,7 @@ export default StyleSheet.create({
   },
   message: {
     color: GRAY,
-    fontSize: 12,
-    paddingTop: 5,
+    fontSize: 15,
   },
 
   // COMPONENT - PROFILE ITEM
@@ -205,7 +207,7 @@ export default StyleSheet.create({
   name: {
     paddingTop: 25,
     paddingBottom: 5,
-    fontSize: 24,
+    fontSize: 35,
     textAlign: "center",
   },
   descriptionProfileItem: {
@@ -288,5 +290,6 @@ export default StyleSheet.create({
   },
   iconMenu: {
     alignItems: "center",
+    color:WHITE,
   },
 });

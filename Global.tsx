@@ -62,7 +62,7 @@ export const SCREEN_PROFILE_SEARCHPARAMETERS = "Profile.SearchParameters"
 export const SCREEN_PROFILE_SETTINGS = "Profile.Settings"
 export const SCREEN_PROFILE_ADVANCED_SETTINGS = "Profile.AdvancedSettings"
 
-export const DEFAULT_COLOR_PRIMARY = '#EC407A';
+export const DEFAULT_COLOR_PRIMARY = '#029cef';
 export const DEFAULT_COLOR_SECONDARY = '#28C4ED';
 
 export const EMPTY_STRING = "...";

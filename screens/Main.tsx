@@ -25,8 +25,8 @@ const Main = ({ route, navigation }: Props) => {
   const { height } = useWindowDimensions();
   const insets = useSafeAreaInsets()
   
-  let messageUpdateInterval: NodeJS.Timeout | undefined;
-  let alertUpdateInterval: NodeJS.Timeout | undefined;
+  let messageUpdateInterval: number;
+  let alertUpdateInterval: number;
   let langIso: string | undefined;
 
   const [newAlert, setNewAlert] = React.useState(false);
@@ -93,7 +93,9 @@ const Main = ({ route, navigation }: Props) => {
   }
 
   return (
-    <Tab.Navigator initialRouteName={Global.SCREEN_SEARCH} barStyle={{height: NAVIGATION_BAR_HEIGHT, marginBottom: insets.bottom}} style={{height: height}}>
+    <Tab.Navigator initialRouteName={Global.SCREEN_SEARCH}
+                   barStyle={{height: NAVIGATION_BAR_HEIGHT, marginBottom: insets.bottom,backgroundColor:'#d34a71'}}
+                   style={{height: height}}>
       <Tab.Screen
         name={Global.SCREEN_YOURPROFILE}
         component={YourProfile}
@@ -104,8 +106,8 @@ const Main = ({ route, navigation }: Props) => {
         }}
         options={{
           tabBarLabel: i18n.t('navigation.profile'),
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="account" color={color} size={ICON_SIZE} />
+          tabBarIcon: ({  focused, color  }) => (
+            <MaterialCommunityIcons name="account-outline" color={focused ? 'white' : 'black'} size={ICON_SIZE} />
           ),
         }}
       />
@@ -120,8 +122,8 @@ const Main = ({ route, navigation }: Props) => {
         options={{
           tabBarBadge: newMessage,
           tabBarLabel: i18n.t('navigation.chat'),
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="chat" color={color} size={ICON_SIZE} />
+          tabBarIcon: ({focused, color }) => (
+            <MaterialCommunityIcons name="chat-outline" color={focused ? 'white' : 'black'} size={ICON_SIZE} />
           ),
         }}
       />
@@ -135,8 +137,8 @@ const Main = ({ route, navigation }: Props) => {
         }}
         options={{
           tabBarLabel: i18n.t('navigation.search'),
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="magnify" color={color} size={ICON_SIZE} />
+          tabBarIcon: ({focused, color }) => (
+            <MaterialCommunityIcons name="magnify" color={focused ? 'white' : 'black'} size={ICON_SIZE} />
           ),
         }}
       />
@@ -151,26 +153,26 @@ const Main = ({ route, navigation }: Props) => {
         options={{
           tabBarBadge: newAlert,
           tabBarLabel: i18n.t('navigation.likes'),
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="heart" color={color} size={ICON_SIZE} />
+          tabBarIcon: ({focused, color }) => (
+            <MaterialCommunityIcons name={focused ? 'heart' : 'heart-outline'}  color={focused ? 'white' : 'black'} size={ICON_SIZE} />
           ),
         }}
       />
-      <Tab.Screen
-        name={Global.SCREEN_DONATE}
-        component={Donate}
-        listeners={{
-          tabPress: e => {
-            saveScreen(e.target);
-          },
-        }}
-        options={{
-          tabBarLabel: i18n.t('navigation.donate'),
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="cash-multiple" color={color} size={ICON_SIZE} />
-          ),
-        }}
-      />
+      {/*<Tab.Screen*/}
+      {/*  name={Global.SCREEN_DONATE}*/}
+      {/*  component={Donate}*/}
+      {/*  listeners={{*/}
+      {/*    tabPress: e => {*/}
+      {/*      saveScreen(e.target);*/}
+      {/*    },*/}
+      {/*  }}*/}
+      {/*  options={{*/}
+      {/*    tabBarLabel: i18n.t('navigation.donate'),*/}
+      {/*    tabBarIcon: ({ color }) => (*/}
+      {/*      <MaterialCommunityIcons name="cash-multiple" color={color} size={ICON_SIZE} />*/}
+      {/*    ),*/}
+      {/*  }}*/}
+      {/*/>*/}
     </Tab.Navigator>
   )
 };

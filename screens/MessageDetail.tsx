@@ -1,4 +1,5 @@
 import React from "react";
+import { formatMessageTime, shouldShowTime, formatDividerTime } from '../plugins/timeUtils';
 import {
   View,
   RefreshControl,
@@ -6,7 +7,7 @@ import {
   Keyboard,
   Image,
   ScrollView,
-  useWindowDimensions
+  useWindowDimensions, TouchableOpacity, StyleSheet
 } from "react-native";
 import {
   TextInput, Card, MaterialBottomTabScreenProps
@@ -29,7 +30,6 @@ const MessageDetail = ({ route, navigation }: Props) => {
 
   const { conversation } = route.params;
   const insets = useSafeAreaInsets();
-
   const { colors } = useTheme();
   const { height, width } = useWindowDimensions();
   const [refreshing] = React.useState(false); // todo: setRefreshing
@@ -57,8 +57,11 @@ const MessageDetail = ({ route, navigation }: Props) => {
 
   React.useEffect(() => {
     navigation.setOptions({
-      title: conversation.userName, tabBarIcon: () => (
-        <Image source={{ uri: conversation.userProfilePicture }} style={{ height: 36, width: 36, borderRadius: 36, marginRight: 18 }} />
+      headerTitle: () => (
+          <View style={{flexDirection:"row",alignItems:"center"}}>
+            <Image source={{ uri: conversation.userProfilePicture }} style={{ height: 40, width: 40, borderRadius: 36}} />
+            <Text style={{marginLeft:5,fontSize:25}}>{conversation.userName}</Text>
+          </View>
       )
     });
     load();
@@ -97,36 +100,58 @@ const MessageDetail = ({ route, navigation }: Props) => {
     Keyboard.dismiss();
   }
 
-  const styleYourChat = {
-    color: 'white',
-    backgroundColor: colors.primary
-  }
-
-  const styleChat = {
-    marginLeft: 4,
-    marginRight: 4,
-    marginBottom: 6,
-    padding: 10,
-    borderRadius: 10,
-    maxWidth: width * 0.85,
-  }
-
   return (
     <View style={[styles.containerMessages, { paddingHorizontal: 0, display: 'flex', maxHeight: height, marginBottom: insets.bottom }]}>
       <ScrollView
-        style={{ padding: 8, flexGrow: 1 }}
-        ref={scrollViewRef}
-        contentContainerStyle={{paddingBottom: 8}}
-        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={load} />}>
-        {
-          results.map((item, index) => (
-            <View key={index} style={[{ flex: 1 }, item.from ? { alignItems: 'flex-start' } : { alignItems: 'flex-end' }]}>
-              <Card style={[styleChat, item.from ? {} : styleYourChat]} >
-                {<Autolink style={[item.from ? {} : styleYourChat]} text={item.content} linkStyle={{textDecorationLine: 'underline'}} email={false} phone={true} matchers={[PhoneMatcher]} component={Text}></Autolink>}
-              </Card>
-            </View>
-          ))
-        }
+          style={{ padding: 8, flexGrow: 1 }}
+          ref={scrollViewRef}
+          contentContainerStyle={{ paddingBottom: 8 }}
+          refreshControl={<RefreshControl refreshing={refreshing} onRefresh={load} />}
+      >
+        {results.map((item, index) => {
+          const showDivider = shouldShowTime(item, results[index - 1]);
+
+          return (
+              <View key={item.id || index}>
+                {/* 时间分隔线（5分钟以上间隔显示） */}
+                {showDivider && (
+                    <View style={styleses.timeDivider}>
+                      <Text style={styleses.timeDividerText}>
+                        {formatDividerTime(item.date)}
+                      </Text>
+                    </View>
+                )}
+
+                <View style={[
+                  { flex: 1, marginBottom: 4 },
+                  item.from ? { alignItems: 'flex-start' } : { alignItems: 'flex-end' }
+                ]}>
+                  <Card style={[
+                    styleses.messageBubble,
+                    item.from ? styleses.otherBubble : styleses.yourBubble
+                  ]}>
+                    <Autolink
+                        style={item.from ? styleses.otherText : styleses.yourText}
+                        text={item.content}
+                        linkStyle={{ textDecorationLine: 'underline' }}
+                        email={false}
+                        phone={true}
+                        matchers={[PhoneMatcher]}
+                        component={Text}
+                    />
+                  </Card>
+
+                  {/* 每条消息的精确时间 */}
+                  <Text style={[
+                    styleses.messageTime,
+                    item.from ? styleses.otherTime : styleses.yourTime
+                  ]}>
+                    {formatMessageTime(item.date)}
+                  </Text>
+                </View>
+              </View>
+          );
+        })}
       </ScrollView>
       <KeyboardAvoidingView>
         <TextInput
@@ -142,5 +167,46 @@ const MessageDetail = ({ route, navigation }: Props) => {
     </View>
   )
 };
-
+const styleses = StyleSheet.create({
+  messageBubble: {
+    padding: 12,
+    maxWidth: '80%',
+  },
+  otherBubble: {
+    backgroundColor: '#f0f0f0',
+  },
+  yourBubble: {
+    backgroundColor: '#007AFF',
+  },
+  otherText: {
+    color: '#000',
+  },
+  yourText: {
+    color: '#fff',
+  },
+  messageTime: {
+    fontSize: 11,
+    color: '#999',
+    marginTop: 2,
+    marginHorizontal: 5,
+  },
+  otherTime: {
+    textAlign: 'left',
+  },
+  yourTime: {
+    textAlign: 'right',
+  },
+  timeDivider: {
+    alignItems: 'center',
+    marginVertical: 16,
+  },
+  timeDividerText: {
+    fontSize: 12,
+    color: '#999',
+    backgroundColor: 'rgba(0,0,0,0.1)',
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 12,
+  },
+});
 export default MessageDetail;

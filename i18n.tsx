@@ -7,7 +7,7 @@ export function getI18n() : I18n {
     const [locale] = Localization.getLocales();
     i18n.locale = locale.languageTag;
     i18n.enableFallback = true;
-    i18n.defaultLocale = 'en';
+    i18n.defaultLocale = 'ko';
     return i18n;
 }
 

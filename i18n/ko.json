@@ -1,0 +1,312 @@
+{
+  "imprint": "연락처",
+  "tos": "이용약관",
+  "privacy-policy": "개인정보 처리방침",
+  "auth": {
+    "email": "로그인",
+    "google": "Google로 로그인",
+    "facebook": "Facebook으로 로그인"
+  },
+  "first-name": "이름",
+  "dob": "생년월일",
+  "optional": "선택사항",
+  "register": {
+    "title": "회원가입",
+    "subtitle": "새 계정 만들기",
+    "agree": "회원가입 시 이용약관과 개인정보 처리방침에 동의합니다.",
+    "referral-code": "추천 코드",
+    "asterisk-warning": "별표(*)가 있는 필드는 나중에 변경할 수 없습니다",
+    "gender": "성별",
+    "age-subtitle": "현재 %s세입니다"
+  },
+  "gender": {
+    "male": "남성",
+    "female": "여성",
+    "other": "논바이너리"
+  },
+  "profile": {
+    "onboarding": {
+      "profile-picture": "제 모습입니다",
+      "profile-picture-subtitle": "사진은 나중에 더 추가할 수 있습니다",
+      "description": "자기소개",
+      "description-placeholder": "아이스크림을 정말 좋아해요! 🍨",
+      "interests": "제가 좋아하는 것들...",
+      "match": {
+        "title": "좋아요 받기 시작!",
+        "subtitle": "매치된 후에만 메시지를 보낼 수 있습니다"
+      },
+      "submit": "시작하기!"
+    },
+    "intention": {
+      "title": "제가 원하는 것",
+      "meet": "새로운 사람 만나기",
+      "date": "연애",
+      "sex": "성적 친밀감",
+      "warning": "24시간 후에만 다시 변경할 수 있습니다"
+    },
+    "gender": "원하는 상대...",
+    "interest-alert-delete": "'%s' 관심사를 삭제하시겠습니까?",
+    "units": {
+      "title": "단위",
+      "si": "SI 단위",
+      "imperial": "영미 단위"
+    },
+    "age": {
+      "min": "최소 나이",
+      "max": "최대 나이"
+    },
+    "misc-info": {
+      "drugs": {
+        "alcohol": "알코올",
+        "tobacco": "담배",
+        "cannabis": "대마",
+        "other": "마약"
+      },
+      "kids": {
+        "title": "자녀",
+        "no": "자녀 없음",
+        "yes": "자녀 있음"
+      },
+      "family": {
+        "title": "가족 계획",
+        "no": "자녀 원하지 않음",
+        "yes": "자녀 원함",
+        "not-sure": "확실하지 않음"
+      },
+      "relationship-type": {
+        "title": "관계 유형",
+        "monogamous": "일부일처제",
+        "polyamorous": "다자연애"
+      },
+      "gender-identity": {
+        "title": "성정체성",
+        "cis": "시스젠더",
+        "trans": "트랜스젠더"
+      },
+      "politics": {
+        "title": "정치 성향",
+        "left": "진보",
+        "right": "보수",
+        "moderate": "중도"
+      },
+      "religion": {
+        "title": "종교",
+        "yes": "종교 있음",
+        "no": "무종교"
+      },
+      "relationship": {
+        "title": "관계 상태",
+        "single": "싱글",
+        "taken": "연애 중",
+        "open": "오픈 연애",
+        "other": "복잡한 관계"
+      },
+      "none": "없음",
+      "yes": "예",
+      "no": "아니오",
+      "sometimes": "가끔"
+    },
+    "intention-toast": "의도가 변경되었습니다. 24시간 동안 변경할 수 없습니다.",
+    "preferred-age-range": "선호 나이 범위",
+    "donated": "후원함",
+    "block": "차단",
+    "unblock": "차단 해제",
+    "delete-account": "계정 삭제",
+    "delete-account-success": "성공! 보내드린 이메일의 안내를 따라주세요.",
+    "download-userdata": "사용자 데이터 다운로드",
+    "download-userdata-success": "사용자 데이터가 다운로드되었습니다!",
+    "photos": {
+      "manage": "사진 관리",
+      "delete": "사진을 삭제하시겠습니까?",
+      "change-profile-pic": "프로필 사진 변경",
+      "add": "사진 추가"
+    },
+    "logout": "로그아웃",
+    "report": {
+      "title": "신고",
+      "subtitle": "이용약관 위반 사용자 신고",
+      "fake": "가짜, 사기 또는 스팸 프로필",
+      "inappropriate": "부적절한 콘텐츠",
+      "minor": "미성년자",
+      "illegal": "불법 콘텐츠",
+      "other": "기타"
+    },
+    "active-state": {
+      "1": "온라인",
+      "2": "오늘 활동함"
+    },
+    "interest": "관심사",
+    "interests-common": "공통 관심사",
+    "profile-page": {
+      "description": "자기소개",
+      "interests": "내 관심사",
+      "basics": "기본 정보",
+      "additional": "추가 정보"
+    },
+    "screen": {
+      "pictures": "사진 관리",
+      "profile": "프로필 편집",
+      "search": "검색 설정",
+      "settings": "설정",
+      "advanced-settings": "고급 설정",
+      "prompts": "프롬프트"
+    },
+    "settings": {
+      "colors": {
+        "title": "색상",
+        "primary": "기본 색상",
+        "secondary": "보조 색상"
+      },
+      "notification": "알림",
+      "email": {
+        "like": "좋아요 및 매치 이메일 수신",
+        "chat": "채팅 이메일 수신"
+      }
+    },
+    "search": {
+      "settings": {
+        "distance": "거리",
+        "min-gps-timeout": "GPS 타임아웃 (ms)",
+        "location": {
+          "latitude": "위도",
+          "longitude": "경도"
+        },
+        "show-outside-parameters": "선호도에 맞는 프로필이 없을 경우 선호도 외 프로필도 표시"
+      },
+      "report-card": "%s의 프로필에서 의심스러운 활동이 감지되었습니다. 그래도 보시겠습니까?",
+      "report-card-dismiss": "프로필 숨기기",
+      "report-card-show": "그래도 보기",
+      "report-card-threshold": "의심스러운 활동 임계값",
+      "button-like": "좋아요"
+    },
+    "prompts": {
+      "title": "프로필 프롬프트",
+      "subtitle": "프롬프트 관리",
+      "delete": "프롬프트를 삭제하시겠습니까?",
+      "add": "새 프롬프트 추가",
+      "1": "제가 가장 좋아하는 것",
+      "2": "특별한 재주",
+      "3": "제가 자주 이야기하는 주제",
+      "4": "제가 말씀드리자면",
+      "5": "제 가장 논쟁적인 의견",
+      "6": "제 마음을 얻는 방법",
+      "7": "제가 원하는 상대",
+      "8": "제가 이상하게 끌리는 것",
+      "9": "제가 찾는 긍정적인 신호",
+      "10": "저에게 가르쳐주세요",
+      "11": "제 생각을 바꿔보세요",
+      "12": "최악의 데이트 실패담",
+      "13": "제 인생 최악의 아이디어",
+      "14": "저는 한번도",
+      "15": "우리가 함께라면",
+      "16": "완벽한 데이트를 3단어로",
+      "17": "제가 좋아하는 제 모습",
+      "18": "제 쓸모없는 재주",
+      "19": "제가 이모지로 표현한다면",
+      "20": "스와이프 라이트 조건"
+    },
+    "verification": {
+      "info-1": "프로필을 인증하여 실존 인물임을 증명하세요",
+      "info-2": "다른 사람들도 귀하의 진위를 투표할 수 있습니다",
+      "info-3": "이 문자를 포함한 손글씨 메모를 들고 있는 자신의 사진을 업로드하세요",
+      "info-4": "얼굴이 완전히 보이도록 해주세요",
+      "info-5": "프로필 사진을 변경하면 다시 인증해야 합니다",
+      "verified-no": "인증되지 않음",
+      "verified-by-users": "커뮤니티 인증됨",
+      "verified-by-admin": "인증됨"
+    },
+    "tooltip": {
+      "donated": "후원함",
+      "blocks": "사용자 차단",
+      "reports": "사용자 신고"
+    }
+  },
+  "cancel": "취소",
+  "ok": "확인",
+  "navigation": {
+    "profile": "프로필",
+    "chat": "채팅",
+    "search": "검색",
+    "likes": "좋아요",
+    "donate": "후원"
+  },
+  "donate": {
+    "filter": {
+      "recent": "최근",
+      "amount": "금액"
+    }
+  },
+  "chat": {
+    "default": "매치되었습니다! 여기를 탭하여 메시지를 보내세요 :)",
+    "placeholder": "메시지를 입력하세요...",
+    "message": "메시지",
+    "search":"메시지 검색"
+  },
+  "you": "나",
+  "sort": "정렬",
+  "error": {
+    "generic": "오류가 발생했습니다. 다시 시도해주세요."
+  },
+  "email": "이메일",
+  "password": "비밀번호",
+  "captcha": {
+    "title": "캡차",
+    "placeholder": "텍스트를 입력하세요"
+  },
+  "register-email": "이메일로 가입하기",
+  "register-email-success": "감사합니다! 가입을 완료하려면 보내드린 링크를 클릭해주세요.",
+  "register-password-warning": "비밀번호는 최소 7자 이상이며 문자와 숫자를 포함해야 합니다.",
+  "password-forget": "비밀번호를 잊으셨나요?",
+  "password-reset": "비밀번호 재설정",
+  "password-reset-success": "이메일을 확인하여 비밀번호 재설정 안내를 따라주세요.",
+  "likes-empty": {
+    "title": "아직 좋아요가 없습니다",
+    "subtitle": "걱정 마세요, 새로운 사용자가 매일 가입하고 있습니다. 프로필의 선호도를 조정하면 더 많은 좋아요를 받을 수 있습니다"
+  },
+  "convo-empty": {
+    "title": "매치를 통해 채팅을 시작하세요",
+    "subtitle": "매력적인 사진을 업로드하고 프로필을 작성하면 더 많은 매치를 얻을 수 있습니다"
+  },
+  "search-empty": {
+    "title": "이런, 케첩이 다 떨어졌어요",
+    "subtitle": "선호도에 맞는 모든 사람을 보셨지만, 새로운 사람들이 매일 가입합니다.",
+    "button": "선호도 변경"
+  },
+  "location": {
+    "no-permission": "위치 권한이 설정되지 않음",
+    "no-signal": "GPS 신호를 찾을 수 없음"
+  },
+  "email-invalid": "유효하지 않은 이메일 주소입니다.",
+  "likes": {
+    "received-likes": "나를 좋아함",
+    "given-likes": "보낸 좋아요",
+    "hidden": "숨겨진 사용자",
+    "blocked": "차단된 사용자"
+  },
+  "restart-apply-changes": "변경사항을 적용하려면 앱을 재시작하세요",
+  "compliment": {
+    "title": "칭찬 보내기",
+    "tooltip": "여기를 탭하여 칭찬을 보내세요!"
+  },
+  "referral": {
+    "title": "친구에게 추천하기",
+    "copy": "추천 코드가 클립보드에 복사되었습니다!",
+    "hint": "새 사용자가 귀하의 추천 코드로 계정을 생성하면 둘 다 프로필에 작지만 영구적인 부스트를 받습니다."
+  },
+  "time": {
+    "today": "오늘",
+    "yesterday": "어제",
+    "weekdays": {
+      "sunday": "일요일",
+      "monday": "월요일",
+      "tuesday": "화요일",
+      "wednesday": "수요일",
+      "thursday": "목요일",
+      "friday": "금요일",
+      "saturday": "토요일"
+    },
+    "just-now": "방금 전",
+    "minutes-ago": "%s분 전",
+    "hours-ago": "%s시간 전"
+  }
+}

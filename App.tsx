@@ -6,7 +6,7 @@ import * as WebBrowser from 'expo-web-browser';
 import { NavigationContainer } from "@react-navigation/native";
 import * as Global from "./Global";
 import { createStackNavigator } from "@react-navigation/stack";
-import { LogBox, useColorScheme } from 'react-native';
+import {ImageBackground, LogBox, useColorScheme} from 'react-native';
 import { MD3LightTheme, MD3DarkTheme, Provider as PaperProvider, configureFonts } from 'react-native-paper';
 import { DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
@@ -21,7 +21,7 @@ import {
   Montserrat_600SemiBold, Montserrat_700Bold, Montserrat_700Bold_Italic
 } from '@expo-google-fonts/montserrat';
 import { TransitionSpec } from "@react-navigation/stack/src/types";
-import { enGB, en, de, registerTranslation } from 'react-native-paper-dates'
+import { enGB, en, de,ko,registerTranslation } from 'react-native-paper-dates'
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { RootStackParamList } from "./types";
 
@@ -33,6 +33,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 registerTranslation('en-GB', enGB);
 registerTranslation('en', en);
 registerTranslation('de', de);
+registerTranslation('ko', ko);
 
 export default function App() {
 
@@ -121,7 +122,7 @@ export default function App() {
       primary: colorPrimary,
       secondary: colorSecondary,
       tertiary: '#F2D3DD', /*not used*/
-      background: isDarkTheme ? '#000000' : "#FFFFFF"
+      background: "#ffffff"
     },
   };
 
@@ -129,7 +130,8 @@ export default function App() {
     success: (props: any) => (
       <BaseToast
         {...props}
-        style={{ borderLeftColor: theme.colors?.primary, backgroundColor: theme.colors?.surface }}
+        style={{ borderLeftColor: theme.colors?.primary,
+          backgroundColor: theme.colors?.surface}}
         text1Style={{
           fontFamily: 'Montserrat_400Regular',
           color: theme.colors?.onSurface

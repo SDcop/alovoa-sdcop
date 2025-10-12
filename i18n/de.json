@@ -177,7 +177,8 @@
             "report-card": "Verdächtige Aktivitäten wurden auf dem Profil von %s festgestellt. Trotzdem anzeigen?",
             "report-card-dismiss": "Profil verbergen",
             "report-card-show": "Trotzdem anzeigen",
-            "report-card-threshold": "Grenzwert für verdächtige Aktivitäten"
+            "report-card-threshold": "Grenzwert für verdächtige Aktivitäten",
+            "button-like": "Ich mag"
         },
         "prompts": {
             "title": "Deine Eisbrecher",
@@ -238,7 +239,9 @@
     },
     "chat": {
         "default": "Ein Match! Jemand mag dich zurück! Tippe hier, um eine Nachricht zu senden :)",
-        "placeholder": "Schreib eine Nachricht..."
+        "placeholder": "Schreib eine Nachricht...",
+        "message": "Nachricht",
+        "search":"Nachrichten suchen"
     },
     "you": "Du",
     "sort": "Sort.",
@@ -290,5 +293,21 @@
         "title": "Einem Freund weiterempfehlen",
         "copy": "Empfehlungscode in die Zwischenablage kopiert!",
         "hint": "Wenn ein neuer Nutzer ein Konto mit deinem Empfehlungscode erstellt, erhaltet ihr beide einen kleinen, aber permanenten Boost für eure Accounts."
+    },
+    "time": {
+        "today": "Heute",
+        "yesterday": "Gestern",
+        "weekdays": {
+            "sunday": "Sonntag",
+            "monday": "Montag",
+            "tuesday": "Dienstag",
+            "wednesday": "Mittwoch",
+            "thursday": "Donnerstag",
+            "friday": "Freitag",
+            "saturday": "Samstag"
+        },
+        "just-now": "Gerade eben",
+        "minutes-ago": "Vor %s Minuten",
+        "hours-ago": "Vor %s Stunden"
     }
 }

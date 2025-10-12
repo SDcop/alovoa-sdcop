@@ -176,7 +176,8 @@
             "report-card": "Suspicious activities detected on the profile of %s. Show anyway?",
             "report-card-dismiss": "Hide profile",
             "report-card-show": "Show anyway",
-            "report-card-threshold": "Threshold for suspicious activities"
+            "report-card-threshold": "Threshold for suspicious activities",
+            "button-like": "I like"
         },
         "prompts": {
             "title": "Your profile prompts",
@@ -237,7 +238,9 @@
     },
     "chat": {
         "default": "You got a match! Tap here to send a message :)",
-        "placeholder": "Write a message..."
+        "placeholder": "Write a message...",
+        "message": "Message",
+        "search":"search something"
     },
     "you": "You",
     "sort": "Sort",
@@ -289,5 +292,21 @@
         "title": "Recommend to a friend",
         "copy": "Referral code copied to clipboard!",
         "hint": "If a new user creates an account with your referral code, both of you gain a small but permanent boost to your profile."
+    },
+    "time": {
+        "today": "today",
+        "yesterday": "yesterday",
+        "weekdays": {
+            "sunday": "sunday",
+            "monday": "monday",
+            "tuesday": "tuesday",
+            "wednesday": "wednesday",
+            "thursday": "thursday",
+            "friday": "friday",
+            "saturday": "saturday"
+        },
+        "just-now": "just-now",
+        "minutes-ago": "minutes-ago",
+        "hours-ago": "hours-ago"
     }
 }

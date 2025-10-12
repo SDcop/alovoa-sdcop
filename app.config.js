@@ -1,4 +1,4 @@
-const EAS_PROJECT_ID = process.env.EAS_PROJECT_ID;
+const EAS_PROJECT_ID = "8a3fbb0d-5bca-4d41-97cf-9398580bdad4";
 const EXPO_OWNER = process.env.EXPO_OWNER;
 
 module.exports = {
@@ -35,12 +35,12 @@ module.exports = {
       ]
     ],
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/tw.jpg",
       "resizeMode": "contain",
-      "backgroundColor": "#ec407a",
+      "backgroundColor": "#ffffff",
       "dark": {
-        "image": "./assets/splash.png",
-        "backgroundColor": "#121212"
+        "image": "./assets/tw.jpg",
+        "backgroundColor": "#ffffff"
       }
     },
     "updates": {
@@ -70,11 +70,11 @@ module.exports = {
       "buildNumber": "37"
     },
     "android": {
-      "icon": "./assets/icon-round.png",
+      "icon": "./assets/tw.jpg",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "monochromeImage": "./assets/monochrome-icon.png",
-        "backgroundColor": "#ec407a"
+        "foregroundImage": "./assets/tw.jpg",
+        "monochromeImage": "./assets/tw.jpg",
+        "backgroundColor": "#ffffff"
       },
       "intentFilters": [
         {
