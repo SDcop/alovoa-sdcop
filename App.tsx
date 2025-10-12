@@ -144,7 +144,7 @@ export default function App() {
   const themeNavigation = {
     ...isDarkTheme ? DarkTheme : DefaultTheme,
     colors: {
-      ...isDarkTheme ? DarkTheme.colors : DefaultTheme.colors,
+      ...isDarkTheme ? DefaultTheme.colors : DefaultTheme.colors,
     },
   };
 

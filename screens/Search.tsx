@@ -6,7 +6,7 @@ import {
     useWindowDimensions,
     Image,
     ImageBackground,
-    TouchableOpacity
+    TouchableOpacity, Dimensions
 } from "react-native";
 import CardStack, {Card} from "react-native-card-stack-swiper";
 import {
@@ -64,6 +64,7 @@ const Search = ({route, navigation}: Props) => {
 
     const LOCATION_TIMEOUT_SHORT = Global.DEFAULT_GPS_TIMEOUT;
     const LOCATION_TIMEOUT_LONG = LOCATION_TIMEOUT_SHORT * 10;
+    const { height: screenHeight } = Dimensions.get('window');
 
     const promiseWithTimeout = (timeoutMs: number, promise: Promise<any>) => {
         return Promise.race([
@@ -261,7 +262,7 @@ const Search = ({route, navigation}: Props) => {
                 position: "absolute",
                 width: '100%',
                 marginHorizontal: 0,
-                paddingTop: STATUS_BAR_HEIGHT + 8,
+                paddingTop: screenHeight*0.05,
                 justifyContent: 'flex-end',
                 zIndex: 1000,
             }]}>
@@ -291,9 +292,9 @@ const Search = ({route, navigation}: Props) => {
                     <ActivityIndicator animating={loading} size="large"/>
                 </View>
             }
-            <ScrollView style={{backgroundColor: colors.background}}
+            <ScrollView style={{backgroundColor: colors.background,minHeight:screenHeight*0.75}}
                         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={load}/>}>
-                <View style={{marginTop: 90, flexDirection: 'column', alignItems: 'center', overflow: "hidden"}}>
+                <View style={{marginTop: screenHeight*0.06+40, flexDirection: 'column', alignItems: 'center', overflow: "hidden"}}>
                     {
                         results.map((card, index) => (
                             <View key={index} style={{

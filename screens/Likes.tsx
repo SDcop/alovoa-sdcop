@@ -6,7 +6,7 @@ import {
     RefreshControl,
     Pressable,
     useWindowDimensions,
-    Image
+    Image, Dimensions
 } from "react-native";
 
 import {ActivityIndicator, IconButton, Menu, Modal, Portal, Text, useTheme} from "react-native-paper";
@@ -45,6 +45,7 @@ const Likes = ({navigation}: Props) => {
     const [visible, setVisible] = React.useState(false);
     const [likeResult, setLikeResult] = React.useState<LikeResultT>();
     const {height, width} = useWindowDimensions();
+    const { height: screenHeight } = Dimensions.get('window');
 
     const svgHeight = 150;
     const svgWidth = 200;
@@ -157,9 +158,10 @@ const Likes = ({navigation}: Props) => {
                     <ActivityIndicator animating={loading} size="large"/>
                 </View>
             }
-            <View style={[styles.top, {marginTop: 28, justifyContent: 'flex-end', width: width, zIndex: 1000}]}>
+            <View style={[styles.top, {marginTop: screenHeight*0.04, justifyContent: 'flex-end', width: width, zIndex: 1000}]}>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Menu
+                        style={{marginTop: screenHeight*0.04}}
                         visible={menuFilterVisible}
                         onDismiss={() => setMenuFilterVisible(false)}
                         anchor={<Pressable onPress={() => setMenuFilterVisible(true)}><MaterialCommunityIcons

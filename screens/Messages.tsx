@@ -4,7 +4,7 @@ import {
     useWindowDimensions,
     Keyboard,
     TouchableOpacity,
-    Animated,
+    Animated, Dimensions,
 } from "react-native";
 import {Text, MaterialBottomTabScreenProps} from "react-native-paper";
 import {Message} from "../components";
@@ -30,6 +30,7 @@ const Messages = ({navigation}: Props) => {
     const [searchText, setSearchText] = useState('');
     const inputRef = useRef(null);
     const [menuOpen, setMenuOpen] = useState(false);
+    const { height: screenHeight } = Dimensions.get('window');
 
     const svgHeight = 150;
     const svgWidth = 200;
@@ -56,8 +57,8 @@ const Messages = ({navigation}: Props) => {
                 // onMenuPress={handleMenuPress}
                 // onCloseMenu={handleCloseMenu}
             />
-            <VerticalView onRefresh={load}>
-                <View style={{paddingTop: STATUS_BAR_HEIGHT + 50}}></View>
+            <VerticalView onRefresh={load} style={{minHeight:screenHeight*0.75}}>
+                <View style={{paddingTop: screenHeight*0.06+ 40}}></View>
                 {
                     results.map((item, index) => (
                         <View key={index}>

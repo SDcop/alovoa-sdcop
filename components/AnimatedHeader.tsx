@@ -8,7 +8,7 @@ import {
     Animated,
     StatusBar,
     Image,
-    Platform,
+    Platform, Dimensions,
 } from 'react-native';
 import {Icon, Message} from "../components";
 import styles from "../assets/styles";
@@ -55,6 +55,7 @@ const AnimatedHeader = ({
     const [isExpanded, setIsExpanded] = useState(false);
     const [searchText, setSearchText] = useState('');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { height: screenHeight } = Dimensions.get('window');
 
     const i18n = I18N.getI18n()
     // 动画引用
@@ -204,7 +205,7 @@ const AnimatedHeader = ({
     };
 
     return (
-        <View style={[styleses.container,styles.backColor]}>
+        <View style={[styleses.container,styles.backColor,{paddingTop:screenHeight*0.06}]}>
             <StatusBar
                 backgroundColor={statusBarBackground}
             />
@@ -328,7 +329,6 @@ const styleses = StyleSheet.create({
         left: 0,
         right: 0,
         zIndex: 500,
-        paddingTop: Platform.OS === 'ios' ? 50 : 45,
         paddingHorizontal: 16,
         paddingBottom: 12,
         borderBottomWidth: 1,
