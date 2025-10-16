@@ -50,14 +50,14 @@ const Messages = ({navigation}: Props) => {
     }, [navigation]);
 
     return (
-        <View style={{backgroundColor:'white'}}>
+        <View>
             <AnimatedHeader
                 title={i18n.t("chat.message")}
                 showSearch={false}
                 // onMenuPress={handleMenuPress}
                 // onCloseMenu={handleCloseMenu}
             />
-            <VerticalView onRefresh={load} style={{minHeight:screenHeight-height}}>
+            <VerticalView onRefresh={load} style={{minHeight:screenHeight*0.9}}>
                 <View style={{paddingTop: screenHeight*0.06+ 40}}></View>
                 {
                     results.map((item, index) => (
