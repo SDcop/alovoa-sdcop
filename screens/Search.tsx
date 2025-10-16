@@ -8,7 +8,6 @@ import {
     ImageBackground,
     TouchableOpacity, Dimensions
 } from "react-native";
-import CardStack, {Card} from "react-native-card-stack-swiper";
 import {
     UserDto,
     SearchResource,
@@ -281,19 +280,19 @@ const Search = ({route, navigation}: Props) => {
                     />
                 }
             </View>
-            {loading &&
-                <View style={{
-                    height: height,
-                    width: width,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    position: "absolute"
-                }}>
-                    <ActivityIndicator animating={loading} size="large"/>
-                </View>
-            }
             <ScrollView style={{backgroundColor: colors.background,minHeight:screenHeight*0.75}}
                         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={load}/>}>
+                {loading &&
+                    <View style={{
+                        height: height,
+                        width: width,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        position: "absolute"
+                    }}>
+                        <ActivityIndicator animating={loading} size="large"/>
+                    </View>
+                }
                 <View style={{marginTop: screenHeight*0.06+40, flexDirection: 'column', alignItems: 'center', overflow: "hidden"}}>
                     {
                         results.map((card, index) => (

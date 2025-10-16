@@ -35,11 +35,11 @@ module.exports = {
       ]
     ],
     "splash": {
-      "image": "./assets/tw.jpg",
+      "image": "./assets/tw.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff",
       "dark": {
-        "image": "./assets/tw.jpg",
+        "image": "./assets/tw.png",
         "backgroundColor": "#ffffff"
       }
     },
@@ -70,10 +70,10 @@ module.exports = {
       "buildNumber": "37"
     },
     "android": {
-      "icon": "./assets/tw.jpg",
+      "icon": "./assets/tw.png",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/tw.jpg",
-        "monochromeImage": "./assets/tw.jpg",
+        "foregroundImage": "./assets/tw.png",
+        "monochromeImage": "./assets/tw.png",
         "backgroundColor": "#ffffff"
       },
       "intentFilters": [

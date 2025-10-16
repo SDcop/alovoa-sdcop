@@ -19,7 +19,7 @@ import * as I18N from "../i18n";
 import {Captcha, RootStackParamList} from "../types";
 import VerticalView from "../components/VerticalView";
 import {STATUS_BAR_HEIGHT} from "../assets/styles";
-import tw from '../assets/tw.jpg';
+import tw from '../assets/tw.png';
 
 const i18n = I18N.getI18n()
 const APP_URL = Linking.createURL("");
@@ -132,7 +132,6 @@ const Login = ({route: _r, navigation: _n}: Props) => {
                     Global.ShowToast(i18n.t('error.generic'));
                 }
             } catch (e) {
-                console.error(e);
                 Global.ShowToast(i18n.t('error.generic'));
             }
         }

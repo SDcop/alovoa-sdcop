@@ -1,5 +1,5 @@
 export const DOMAIN : string = "https://www.longlongpark.icu:8080"
-//export const DOMAIN : string = "https://beta.alovoa.com"
+//export const DOMAIN : string = "http://192.168.3.15:8080"
 //export const DOMAIN : string = "https://alovoa.com"
 
 export const PATH_BOOLEAN_TRUE = "true"

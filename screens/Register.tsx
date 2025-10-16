@@ -188,6 +188,8 @@ const Register = ({ route, navigation }: Props) => {
           <View style={[style.container]}>
             <DatePickerInput
               mode="outlined"
+              startYear={1920}
+              endYear={2025}
               style={{ backgroundColor: colors.background }}
               locale={getDateInputLocale()}
               label={i18n.t('dob') + " *"}
