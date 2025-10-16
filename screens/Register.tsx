@@ -188,8 +188,6 @@ const Register = ({ route, navigation }: Props) => {
           <View style={[style.container]}>
             <DatePickerInput
               mode="outlined"
-              startYear={1920}
-              endYear={2025}
               style={{ backgroundColor: colors.background }}
               locale={getDateInputLocale()}
               label={i18n.t('dob') + " *"}
@@ -197,6 +195,7 @@ const Register = ({ route, navigation }: Props) => {
               onChange={(d) => { if (d) { setDob(d) } }}
               inputMode="start"
               validRange={validDobRange}
+              withModal={false}  // 禁用模态框选择
             />
             {(Global.calcAge(dob) >= MIN_AGE && Global.calcAge(dob) <= MAX_AGE) &&
               <HelperText type="info">{Global.format(i18n.t('register.age-subtitle'), Global.calcAge(dob).toString())}</HelperText>

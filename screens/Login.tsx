@@ -216,7 +216,7 @@ const Login = ({route: _r, navigation: _n}: Props) => {
                             secureTextEntry={true}
                         />
 
-                        <Button icon="email" mode="contained" style={{marginTop: 18}} onPress={emailSignInPress}>
+                        <Button icon="email" mode="contained" style={{marginTop: 18,backgroundColor: "#ea3684"}} onPress={emailSignInPress}>
                             <Text style={style.buttonText}>{i18n.t('auth.email')}</Text>
                         </Button>
 
@@ -235,7 +235,7 @@ const Login = ({route: _r, navigation: _n}: Props) => {
 
                         <Divider style={{margin: height >= 800 ? 48 : 18}}/>
                         <View>
-                            <Button style={{backgroundColor: "#757575"}} onPress={() => {
+                            <Button style={{backgroundColor: "#4521c8"}} onPress={() => {
                                 Global.navigate("Register", false, {registerEmail: true});
                             }}><Text style={style.buttonText}>{i18n.t('register-email')}</Text></Button>
                         </View>
