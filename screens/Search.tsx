@@ -37,7 +37,6 @@ type Props = MaterialBottomTabScreenProps<RootStackParamList, 'Search'>
 const Search = ({route, navigation}: Props) => {
 
     const {colors} = useTheme();
-
     let swiper: any = React.useRef(null);
     const [refreshing] = React.useState(false); // todo: setRefreshing
     const [user, setUser] = React.useState<UserDto>();
@@ -280,7 +279,7 @@ const Search = ({route, navigation}: Props) => {
                     />
                 }
             </View>
-            <ScrollView style={{backgroundColor: colors.background,minHeight:screenHeight*0.80}}
+            <ScrollView style={{backgroundColor: colors.background,minHeight:screenHeight-height}}
                         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={load}/>}>
                 {loading &&
                     <View style={{

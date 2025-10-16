@@ -57,7 +57,7 @@ const Messages = ({navigation}: Props) => {
                 // onMenuPress={handleMenuPress}
                 // onCloseMenu={handleCloseMenu}
             />
-            <VerticalView onRefresh={load} style={{minHeight:screenHeight*0.80}}>
+            <VerticalView onRefresh={load} style={{minHeight:screenHeight-height}}>
                 <View style={{paddingTop: screenHeight*0.06+ 40}}></View>
                 {
                     results.map((item, index) => (
