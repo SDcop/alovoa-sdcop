@@ -280,7 +280,7 @@ const Search = ({route, navigation}: Props) => {
                     />
                 }
             </View>
-            <ScrollView style={{backgroundColor: colors.background,minHeight:screenHeight*0.75}}
+            <ScrollView style={{backgroundColor: colors.background,minHeight:screenHeight*0.80}}
                         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={load}/>}>
                 {loading &&
                     <View style={{
