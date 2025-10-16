@@ -107,7 +107,7 @@ const Main = ({ route, navigation }: Props) => {
         options={{
           tabBarLabel: i18n.t('navigation.profile'),
           tabBarIcon: ({  focused, color  }) => (
-            <MaterialCommunityIcons name="account-outline" color={focused ? 'white' : 'black'} size={ICON_SIZE} />
+            <MaterialCommunityIcons name="account-outline" color={focused ? 'white' : 'white'} size={ICON_SIZE} />
           ),
         }}
       />
@@ -123,7 +123,7 @@ const Main = ({ route, navigation }: Props) => {
           tabBarBadge: newMessage,
           tabBarLabel: i18n.t('navigation.chat'),
           tabBarIcon: ({focused, color }) => (
-            <MaterialCommunityIcons name="chat-outline" color={focused ? 'white' : 'black'} size={ICON_SIZE} />
+            <MaterialCommunityIcons name="chat-outline" color={focused ? 'white' : 'white'} size={ICON_SIZE} />
           ),
         }}
       />
@@ -138,7 +138,7 @@ const Main = ({ route, navigation }: Props) => {
         options={{
           tabBarLabel: i18n.t('navigation.search'),
           tabBarIcon: ({focused, color }) => (
-            <MaterialCommunityIcons name="magnify" color={focused ? 'white' : 'black'} size={ICON_SIZE} />
+            <MaterialCommunityIcons name="magnify" color={focused ? 'white' : 'white'} size={ICON_SIZE} />
           ),
         }}
       />
@@ -154,7 +154,7 @@ const Main = ({ route, navigation }: Props) => {
           tabBarBadge: newAlert,
           tabBarLabel: i18n.t('navigation.likes'),
           tabBarIcon: ({focused, color }) => (
-            <MaterialCommunityIcons name={focused ? 'heart' : 'heart-outline'}  color={focused ? 'white' : 'black'} size={ICON_SIZE} />
+            <MaterialCommunityIcons name={focused ? 'heart' : 'heart-outline'}  color={focused ? 'white' : 'white'} size={ICON_SIZE} />
           ),
         }}
       />
